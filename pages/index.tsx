@@ -38,11 +38,11 @@ export default function Home() {
           return(
             <div className=" w-3/6	 p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700
              flex flex-row justify-around leading-normal  mb-3 text-white text-xl items-center" key={key}>
-                  <div className='bg-gray-900 p-4 ml-2 rounded-xl'>{key+1}</div>
+                  <div className='border-gray-900 p-1 mr-2 border-r items-start'>{key+1}</div>
               <div>{el.name}</div>
               {el.points>=0?       <div className=
-           'bg-emerald-600 p-4 ml-2 rounded-xl'>{el.points}</div>:       <div className=
-           'bg-red-900 p-4 ml-2 rounded-xl'>{el.points}</div>}
+           'border-b p-2 ml-2 text-emerald-600'>{el.points}</div>:       <div className=
+           'text-red-900 p-2 ml-2 border-b'>{el.points}</div>}
     
             </div>
        
