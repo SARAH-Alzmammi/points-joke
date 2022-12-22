@@ -36,7 +36,7 @@ export default function Home() {
         <h1 className='text-emerald-700 text-center text-3xl mb-10 mt-10 font-bold sm:text-5xl'>POINTS LEADER DASHBOARD</h1>
         {pointsData?.map((el:any,key) => {
           return(
-            <div className=" w-3/6	 p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700
+            <div className=" w-3/6	 p-6  border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700
              flex flex-row justify-around leading-normal  mb-3 text-white text-xl items-center" key={key}>
                   <div className='border-gray-900 p-1 mr-2 border-r items-start'>{key+1}</div>
               <div>{el.name}</div>
