@@ -8,18 +8,14 @@ export default function Home() {
     getData()
   }, [])
   async function getData() {
-
     try {
-
-
       let { data, error } = await supabase
       .from('points')
       .select('*')  .order('points', { ascending: false })
 
-      if (error && status !== 406) {
+      if (error) {
         throw error
       }
-
       if (data) {
         console.log(data)
         setPointsData(data as any)
@@ -38,7 +34,7 @@ export default function Home() {
       </Head>
       <main className='flex flex-col items-center w-full'>
         <h1 className='text-emerald-700 text-center text-3xl mb-10 mt-10 font-bold sm:text-5xl'>POINTS LEADER DASHBOARD</h1>
-        {pointsData?.map((el,key) => {
+        {pointsData?.map((el:any,key) => {
           return(
             <div className=" w-3/6	 p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700
              flex flex-row justify-around leading-normal  mb-3 text-white text-xl items-center" key={key}>
