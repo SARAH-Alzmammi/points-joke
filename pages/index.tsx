@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import { useState, useEffect } from 'react'
 import { supabase } from '../services';
+import Router from "next/router";
+
 export default function Home() {
   
   const [pointsData, setPointsData] = useState([])
@@ -17,7 +19,7 @@ export default function Home() {
         throw error
       }
       if (data) {
-        console.log(data)
+     
         setPointsData(data as any)
 
       }
@@ -42,12 +44,17 @@ export default function Home() {
               <div>{el.name}</div>
               {el.points>=0?       <div className=
            'border-b p-2 ml-2 text-emerald-600'>{el.points}</div>:       <div className=
-           'text-red-900 p-2 ml-2 border-b'>{el.points}</div>}
+           'text-red-700 p-2 ml-2 border-b'>{el.points}</div>}
     
             </div>
        
           )
-       })}
+        })}
+              <a
+        className=" bg-gray-800 hover:bg-emerald-900
+         text-white font-bold p-2 rounded text-xs    self-start "
+        onClick={ ()=>  Router.push('/login')}>
+      Login    </a>
       </main>
     </>
   )
