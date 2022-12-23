@@ -53,8 +53,8 @@ export default function Home() {
               <a
         className=" bg-gray-800 hover:bg-emerald-900
          text-white font-bold p-2 rounded text-xs    self-start "
-        onClick={ ()=>  Router.push('/login')}>
-      Login    </a>
+        onClick={ ()=>  Router.push('/admin')}>
+      Admin    </a>
       </main>
     </>
   )

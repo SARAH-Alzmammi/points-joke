@@ -8,8 +8,6 @@ export default function Admin() {
  const [pointsData, setPointsData] = useState([])
 
   useEffect(() => {
-    console.log(window.localStorage.getItem('user'))
-
   getData()
  }, [])
   
@@ -55,11 +53,18 @@ async function getData() {
  }
   return (
     <div className="m-5">
+      <div className='flex flex-col gap-2  w-3/12'>
       <a
         className=" bg-gray-800 hover:bg-emerald-900
-         text-white font-bold p-2 rounded text-xs    self-start "
+         text-white font-bold p-2 rounded text-xs    self-start  w-full text-center"
         onClick={ ()=>  Router.push('/')}>
         ألغو رحلتي      </a>
+        <a
+        className=" bg-gray-800 hover:bg-emerald-900
+         text-white font-bold p-2 rounded text-xs    self-start w-full text-center"
+        onClick={ ()=>  Router.push('/login')}>
+Login </a>
+</div>
             <h1 className='text-emerald-700 text-center text-3xl mb-10 mt-10 font-bold sm:text-5xl'> 👋حياك الله  </h1>
     <div className="flex flex-col items-center w-full mt-10">
      
@@ -82,7 +87,7 @@ async function getData() {
       ease-in-out
  
       focus:text-white-700 focus:bg-gray-800 focus:border-bg-gray-900 focus:outline-none" aria-label="Default select example">
-        <option selected >Open this select menu to select a name</option>
+        <option selected >أختاري اسم من القائمة</option>
         {pointsData?.map((el: any, key) => {
          return (
           <option key={key} value={el.name}
@@ -96,13 +101,14 @@ async function getData() {
         {name && <div>
           <p className=" text-center     text-white">👏   تستاهل { name}كفو</p>
       <button onClick={()=>addOne()} className="mt-5 bg-emerald-800 hover:bg-emerald-900 text-white font-bold py-2 px-4 rounded w-full     m-2">
-       ADD ONE POINT TO <span className="border-b border-red-900 "> {name}</span>🥳
+      🥳   <span className="border-b border-red-900 "> {name}</span> ضيفي  نقطة لـ 
 </button>
 
         </div>}
 
-     
-</div>
+
+      </div>
+
     </div>
   )
   };
